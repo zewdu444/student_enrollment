@@ -12,7 +12,9 @@ import { Link, useLocation } from 'react-router-dom'
 function NavBar() {
   const location = useLocation();
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{
+      marginBottom: '1rem',
+    }}>
     <AppBar position="static">
       <Toolbar>
       {location.pathname === '/register' ?

@@ -5,6 +5,7 @@ import  Splash  from "./components/Splash";
 import  Detail  from "./components/Detail";
 import {Stack } from "@mui/material";
 
+
 function App() {
   const location = useLocation();
 
