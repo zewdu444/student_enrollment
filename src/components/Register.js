@@ -1,8 +1,11 @@
+import { Stack } from '@mui/material'
 import React from 'react'
 
 function Register() {
   return (
-    <div>register</div>
+    <Stack sx={{} }>
+      Register
+    </Stack>
   )
 }
 
