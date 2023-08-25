@@ -1,8 +1,6 @@
 body {
   margin: 0;
 }
-
-
 .react-chatbot-kit-chat-container {
    width: 100% !important;
    scroll-behavior: smooth !important;
