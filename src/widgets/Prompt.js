@@ -1,6 +1,8 @@
 import { Button, Stack } from '@mui/material'
+
 import React from 'react'
-function Prompt() {
+
+function Prompt(props) {
   return (
     <Stack
       sx={{
@@ -21,7 +23,9 @@ function Prompt() {
           variant:'outlined',
           color: 'primary',
           border: '2px solid #1976d2',
-        }} >
+        }}
+         onClick={props.actionProvider.nameHandler}
+        >
         Got it!
       </Button>
     </Stack>

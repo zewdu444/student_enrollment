@@ -1,7 +1,8 @@
 import React from 'react';
+import { createClientMessage, createCustomMessage } from 'react-chatbot-kit';
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
-  const handleHello = () => {
+  const helloHandler = () => {
     const botMessage = createChatBotMessage('Hello. Nice to meet you.');
 
     setState((prev) => ({
@@ -10,13 +11,43 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
-  // Put the handleHello function in the actions object to pass to the MessageParser
+
+  const nameHandler = () => {
+    const botMessage = createChatBotMessage(
+      "Please enter your name",
+    );
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage]
+    }));
+
+
+  };
+
+  const ageHandler = () => {
+    const botMessage = createChatBotMessage(
+      "Please Select your age",
+      {
+        widget: "Options",
+      }
+    );
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  }
+
+  // Put the handleHello and handleDog function in the actions object to pass to the MessageParser
   return (
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
           actions: {
-            handleHello,
+            helloHandler,
+            nameHandler,
+            ageHandler,
           },
         });
       })}
