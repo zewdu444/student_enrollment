@@ -33,7 +33,7 @@
 ## 📷 project screenshot <a name="screen-shoot"> </a>
 
 <img src="./screenshot/enrollment.png" alt="logo"
- width="600" height="400"
+ width="600" height="700"
   style="display: block;
   margin-left: auto;
   margin-right: auto;
