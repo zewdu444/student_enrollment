@@ -1,6 +1,4 @@
 import React from 'react';
-import { createClientMessage, createCustomMessage } from 'react-chatbot-kit';
-
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const helloHandler = () => {
     const botMessage = createChatBotMessage('Hello. Nice to meet you.');
@@ -13,6 +11,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
 
   const nameHandler = () => {
+
     const botMessage = createChatBotMessage(
       "Please enter your name",
     );
@@ -29,15 +28,28 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const botMessage = createChatBotMessage(
       "Please Select your age",
       {
-        widget: "Options",
+        widget: "AgeOptions",
       }
     );
-
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
     }));
+
   }
+
+const setAgeHandler = ()=>{
+  const botMessage = createChatBotMessage(
+    "Thank you. In 5 seconds, bot will exit",
+    {
+      widget: "Counter",
+    }
+  );
+  setState((prev) => ({
+    ...prev,
+    messages: [...prev.messages, botMessage],
+  }));
+}
 
   // Put the handleHello and handleDog function in the actions object to pass to the MessageParser
   return (
@@ -48,6 +60,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             helloHandler,
             nameHandler,
             ageHandler,
+            setAgeHandler,
           },
         });
       })}

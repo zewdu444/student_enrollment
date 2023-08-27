@@ -1,6 +1,7 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
 import Prompt  from '../widgets/Prompt';
-import Options from '../widgets/Options';
+import AgeOptions from '../widgets/AgeOptions';
+import Counter from '../widgets/Counter';
 const botName = 'Student Registration  System';
 
 const config = {
@@ -24,9 +25,13 @@ const config = {
       widgetFunc: (props) => <Prompt {...props} />,
     },
     {
-      widgetName: 'Options',
-      widgetFunc: (props) => <Options {...props} />,
+      widgetName: 'AgeOptions',
+      widgetFunc: (props) => <AgeOptions {...props} />,
     },
+    {
+      widgetName: 'Counter',
+      widgetFunc: (props) => <Counter {...props} />,
+    }
   ],
 
 };
