@@ -4,10 +4,12 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import { setAge as storeAge } from '../redux/student/StudentSlice';
+import { useDispatch } from 'react-redux';
 
 const AgeOptions = (props) => {
   const [age, setAge] = React.useState('');
+  const dispatch =useDispatch()
   const ageRange =[];
   for (let i = 18; i <= 40; i++) {
     ageRange.push(i);
@@ -28,7 +30,7 @@ const AgeOptions = (props) => {
       handler:props.actionProvider.setAgeHandler,
       id: 1,
     });
-
+    dispatch(storeAge(ageOptions[0].text))
      if(typeof ageOptions[0].handler === 'function'){
        ageOptions[0].handler()
      }
